@@ -1,0 +1,12 @@
+﻿version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/TalentoPlus.Api/Dockerfile
+    container_name: talentoplus-api
+    ports:
+      - "5112:8080"
+    env_file:
+      - .env

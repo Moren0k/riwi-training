@@ -1,0 +1,218 @@
+.plansContainer {
+    min-height: calc(100vh - 200px);
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.toggleButton {
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+
+.plansGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.planCard {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    position: relative;
+    border: 2px solid transparent;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-2xl);
+    }
+
+    &.popular {
+        border-color: var(--primary);
+        transform: scale(1.05);
+
+        &:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+    }
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+}
+
+.planHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--gray-lighter);
+}
+
+.planName {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.priceContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.price {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.period {
+    font-size: var(--font-size-base);
+    color: var(--gray);
+}
+
+.pricePerMonth {
+    font-size: var(--font-size-sm);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-base);
+    color: var(--dark);
+}
+
+.checkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--gradient-success);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+.infoBox {
+    background: var(--gray-lighter);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary);
+
+    h3 {
+        font-size: var(--font-size-lg);
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: var(--spacing-md);
+    }
+
+    p {
+        font-size: var(--font-size-base);
+        color: var(--gray);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    a {
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .plansGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .planCard.popular {
+        transform: scale(1);
+
+        &:hover {
+            transform: translateY(-8px);
+        }
+    }
+}

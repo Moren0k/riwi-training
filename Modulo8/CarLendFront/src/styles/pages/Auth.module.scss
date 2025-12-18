@@ -1,0 +1,220 @@
+.authContainer {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background: var(--navy);
+}
+
+.authCard {
+    background: var(--dark);
+    border: 1px solid var(--dark-lighter);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    padding: var(--spacing-3xl);
+    width: 100%;
+    max-width: 500px;
+    animation: slideInUp 0.5s ease-out;
+
+    &.wide {
+        max-width: 800px;
+    }
+}
+
+.authHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.authTitle {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.authSubtitle {
+    color: var(--gray);
+    font-size: var(--font-size-base);
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.select {
+    padding: var(--spacing-md);
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base);
+    background: var(--white);
+    font-family: inherit;
+
+    &:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+}
+
+.error {
+    padding: var(--spacing-md);
+    background: #fee2e2;
+    color: var(--danger);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    border-left: 4px solid var(--danger);
+}
+
+.fileSection {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: var(--gray-lighter);
+    border-radius: var(--radius-lg);
+}
+
+.sectionTitle {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.sectionSubtitle {
+    font-size: var(--font-size-sm);
+    color: var(--gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+.fileGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.fileInput {
+    position: relative;
+}
+
+.fileLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl);
+    background: var(--white);
+    border: 2px dashed var(--gray-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--gray);
+    text-align: center;
+
+    &:hover {
+        border-color: var(--primary);
+        background: rgba(99, 102, 241, 0.05);
+        color: var(--primary);
+    }
+
+    input[type="file"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.fileName {
+    font-size: var(--font-size-xs);
+    color: var(--secondary);
+    font-weight: 500;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.divider {
+    height: 1px;
+    background: var(--gray-light);
+    margin: var(--spacing-lg) 0;
+}
+
+.infoBox {
+    padding: var(--spacing-md);
+    background: #dbeafe;
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+
+    p {
+        font-size: var(--font-size-sm);
+        color: var(--dark);
+        margin: 0;
+    }
+}
+
+.authFooter {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--gray);
+
+    p {
+        margin: var(--spacing-sm) 0;
+    }
+}
+
+.link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-base);
+
+    &:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+    .authCard {
+        padding: var(--spacing-xl);
+
+        &.wide {
+            max-width: 100%;
+        }
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fileGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,756 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SomosRentWi API",
+    "description": "API for car rental management system",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/admin/companies": {
+      "post": {
+        "tags": [
+          "AdminCompanies"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompanyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompanyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompanyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Password": {
+                    "type": "string"
+                  },
+                  "FirstName": {
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "DocumentType": {
+                    "$ref": "#/components/schemas/ClientDocumentType"
+                  },
+                  "DocumentNumber": {
+                    "type": "string"
+                  },
+                  "BirthDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "PrimaryPhone": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "SelfiePhoto": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "DocumentFront": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "DocumentBack": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "LicenseFront": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "LicenseBack": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Email": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                },
+                "FirstName": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "DocumentType": {
+                  "style": "form"
+                },
+                "DocumentNumber": {
+                  "style": "form"
+                },
+                "BirthDate": {
+                  "style": "form"
+                },
+                "PrimaryPhone": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "SelfiePhoto": {
+                  "style": "form"
+                },
+                "DocumentFront": {
+                  "style": "form"
+                },
+                "DocumentBack": {
+                  "style": "form"
+                },
+                "LicenseFront": {
+                  "style": "form"
+                },
+                "LicenseBack": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars": {
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Brand": {
+                    "type": "string"
+                  },
+                  "Model": {
+                    "type": "string"
+                  },
+                  "Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plate": {
+                    "type": "string"
+                  },
+                  "Color": {
+                    "type": "string"
+                  },
+                  "CommercialValue": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "BasePricePerHour": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "SoatExpirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "TechExpirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "MainPhoto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Brand": {
+                  "style": "form"
+                },
+                "Model": {
+                  "style": "form"
+                },
+                "Year": {
+                  "style": "form"
+                },
+                "Plate": {
+                  "style": "form"
+                },
+                "Color": {
+                  "style": "form"
+                },
+                "CommercialValue": {
+                  "style": "form"
+                },
+                "BasePricePerHour": {
+                  "style": "form"
+                },
+                "SoatExpirationDate": {
+                  "style": "form"
+                },
+                "TechExpirationDate": {
+                  "style": "form"
+                },
+                "MainPhoto": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/{id}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Brand": {
+                    "type": "string"
+                  },
+                  "Model": {
+                    "type": "string"
+                  },
+                  "Year": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Plate": {
+                    "type": "string"
+                  },
+                  "Color": {
+                    "type": "string"
+                  },
+                  "CommercialValue": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "BasePricePerHour": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "SoatExpirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "TechExpirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "MainPhoto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Brand": {
+                  "style": "form"
+                },
+                "Model": {
+                  "style": "form"
+                },
+                "Year": {
+                  "style": "form"
+                },
+                "Plate": {
+                  "style": "form"
+                },
+                "Color": {
+                  "style": "form"
+                },
+                "CommercialValue": {
+                  "style": "form"
+                },
+                "BasePricePerHour": {
+                  "style": "form"
+                },
+                "SoatExpirationDate": {
+                  "style": "form"
+                },
+                "TechExpirationDate": {
+                  "style": "form"
+                },
+                "MainPhoto": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/company/{companyId}": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cars/my-cars": {
+      "get": {
+        "tags": [
+          "Cars"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals": {
+      "post": {
+        "tags": [
+          "Rentals"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRentalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRentalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRentalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/{id}": {
+      "get": {
+        "tags": [
+          "Rentals"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/my-rentals": {
+      "get": {
+        "tags": [
+          "Rentals"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/company-rentals": {
+      "get": {
+        "tags": [
+          "Rentals"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/{id}/deliver": {
+      "post": {
+        "tags": [
+          "Rentals"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/{id}/complete": {
+      "post": {
+        "tags": [
+          "Rentals"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rentals/{id}/cancel": {
+      "post": {
+        "tags": [
+          "Rentals"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelRentalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelRentalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelRentalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CancelRentalRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClientDocumentType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CompanyPlan": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CreateCompanyRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "tradeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "nitNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "landlineNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "website": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyPlan": {
+            "$ref": "#/components/schemas/CompanyPlan"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRentalRequest": {
+        "type": "object",
+        "properties": {
+          "carId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedEndDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. Enter 'Bearer' [space] and then your token.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

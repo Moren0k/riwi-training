@@ -1,0 +1,101 @@
+.footer {
+    background: var(--dark);
+    color: var(--gray-light);
+    padding: var(--spacing-3xl) 0 var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.columnTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+
+    a {
+        font-size: var(--font-size-sm);
+        color: var(--gray-light);
+        transition: color var(--transition-base);
+
+        &:hover {
+            color: var(--primary-light);
+        }
+    }
+}
+
+.botDescription {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.botButton {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+.bottom {
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--dark-light);
+    text-align: center;
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}

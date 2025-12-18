@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "RemmL6VAN2Pob/rdeokE2x5vl67/kU1+Wssn+XShC2nc+JG/8iljwYfOga8pQilTwnTP/7AxvFuMrcYr2/D0WA==",
+  "success": true,
+  "projectFilePath": "/home/kevin-moreno/Escritorio/Telegram_IA/BOT_IA/SmartRent.TelegramBot/SmartRent.TelegramBot.csproj",
+  "expectedPackageFiles": [
+    "/home/kevin-moreno/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/home/kevin-moreno/.nuget/packages/telegram.bot/18.0.0/telegram.bot.18.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
