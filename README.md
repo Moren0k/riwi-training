@@ -1,7 +1,8 @@
-# Riwi_Coder
+# Riwi Training: Fullstack & Software Architecture Journey
 
-Repositorio personal para organizar y almacenar los entrenamientos realizados durante el proceso.
-Aquí se encuentran los ejercicios y prácticas por módulos, enfocados en fortalecer habilidades técnicas a lo largo del programa. Ideal para hacer seguimiento del progreso, repasar conceptos clave y mantener un historial limpio de evolución como desarrollador.
+Este repositorio es mi biblioteca central de aprendizaje durante el entrenamiento intensivo en Riwi. Aquí documento mi evolución desde los fundamentos de la lógica hasta la implementación de arquitecturas empresariales complejas.
+
+**"Building scalable solutions with clean code and solid architecture."**
 
 ## Estructura
 
@@ -9,4 +10,15 @@ Aquí se encuentran los ejercicios y prácticas por módulos, enfocados en forta
             Modulo#_Semana#
                 M#S#.{formato}
                 README.md
-                
+
+---
+
+## Contacto
+
+Si quieres conocer más sobre mi proceso o colaborar en algún proyecto:
+
+[LinkedIn](https://www.linkedin.com/in/jhoskevinagudelomoreno/)
+
+Email: <jhoskevinagudelomoreno@gmail.com>
+
+---
